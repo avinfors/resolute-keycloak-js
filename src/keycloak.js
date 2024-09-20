@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import { sha256 } from "@noble/hashes/sha256";
-import { jwtDecode } from "jwt-decode";
+import { decode } from "jsonwebtoken";
 
 if (typeof Promise === "undefined") {
   throw Error(
@@ -1119,7 +1119,7 @@ function Keycloak(config) {
 
     if (refreshToken) {
       kc.refreshToken = refreshToken;
-      kc.refreshTokenParsed = jwtDecode(refreshToken);
+      kc.refreshTokenParsed = decode(refreshToken);
     } else {
       delete kc.refreshToken;
       delete kc.refreshTokenParsed;
@@ -1127,7 +1127,7 @@ function Keycloak(config) {
 
     if (idToken) {
       kc.idToken = idToken;
-      kc.idTokenParsed = jwtDecode(idToken);
+      kc.idTokenParsed = decode(idToken);
     } else {
       delete kc.idToken;
       delete kc.idTokenParsed;
@@ -1135,7 +1135,7 @@ function Keycloak(config) {
 
     if (token) {
       kc.token = token;
-      kc.tokenParsed = jwtDecode(token);
+      kc.tokenParsed = decode(token);
       kc.sessionId = kc.tokenParsed.sid;
       kc.authenticated = true;
       kc.subject = kc.tokenParsed.sub;
