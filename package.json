@@ -1,6 +1,6 @@
 {
   "name": "@avinfors/keycloak-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A client-side JavaScript OpenID Connect library that can be used to secure web applications",
   "main": "./dist/keycloak.js",
   "module": "./dist/keycloak.mjs",
@@ -63,6 +63,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.5.0",
     "es6-promise": "^4.2.8",
     "rollup": "^4.21.0",

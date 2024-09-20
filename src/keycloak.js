@@ -561,7 +561,7 @@ function Keycloak(config) {
   };
 
   kc.createLogoutUrl = function (options) {
-    const logoutMethod = options?.logoutMethod ?? kc.logoutMethod;
+    const logoutMethod = options.logoutMethod || kc.logoutMethod;
     if (logoutMethod === "POST") {
       return kc.endpoints.logout();
     }
@@ -1540,7 +1540,7 @@ function Keycloak(config) {
         },
 
         logout: async function (options) {
-          const logoutMethod = options?.logoutMethod ?? kc.logoutMethod;
+          const logoutMethod = options.logoutMethod || kc.logoutMethod;
           if (logoutMethod === "GET") {
             window.location.replace(kc.createLogoutUrl(options));
             return;
