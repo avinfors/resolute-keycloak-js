@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 import { sha256 } from "@noble/hashes/sha256";
-import { decode } from "jsonwebtoken";
+import { jwtDecode as decode } from "jwt-decode";
 
 if (typeof Promise === "undefined") {
   throw Error(
